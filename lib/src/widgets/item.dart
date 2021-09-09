@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl_phone_number_input/src/models/country_model.dart';
 import 'package:intl_phone_number_input/src/utils/util.dart';
 
@@ -46,6 +47,7 @@ class Item extends StatelessWidget {
             textDirection: TextDirection.ltr,
             style: textStyle,
           ),
+          SvgPicture.asset("assets/arrow-down.svg")
         ],
       ),
     );
@@ -71,7 +73,7 @@ class _Flag extends StatelessWidget {
                   )
                 : Image.asset(
                     country!.flagUri,
-                    width: 32.0,
+                    width: 20.0,
                     package: 'intl_phone_number_input',
                     errorBuilder: (context, error, stackTrace) {
                       return SizedBox.shrink();

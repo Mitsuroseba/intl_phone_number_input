@@ -85,6 +85,8 @@ class InternationalPhoneNumberInput extends StatefulWidget {
 
   final List<String>? countries;
 
+  final Color? buttonColor;
+
   InternationalPhoneNumberInput(
       {Key? key,
       this.selectorConfig = const SelectorConfig(),
@@ -122,7 +124,8 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       this.focusNode,
       this.cursorColor,
       this.autofillHints,
-      this.countries})
+      this.countries,
+      this.buttonColor})
       : super(key: key);
 
   @override
@@ -398,6 +401,7 @@ class _InputWidgetView
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 SelectorButton(
+                  color: widget.buttonColor,
                   country: state.country,
                   countries: state.countries,
                   onCountryChanged: state.onCountryChanged,
